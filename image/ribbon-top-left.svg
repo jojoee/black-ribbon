@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="100pt" height="100pt" viewBox="0 0 100 100"
+ preserveAspectRatio="xMidYMid meet">
+  <metadata>
+  Ribbon from Jatuporn Jib Piyawarinwong
+  Ribbon watermark idea from Sittiphol Phanvilai
+  Converted to svg by Krist Wongsuphasawat with help from potrace 1.10, written by Peter Selinger 2001-2011
+  </metadata>
+  <defs>
+    <filter id="dropshadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.1"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g transform="translate(42, 42) rotate(-45)">
+    <rect x="-120" y="-15" width="240" height="25" fill="#404040"  filter="url(#dropshadow)"/>
+  </g>
+  <g transform="translate(40, 40)">
+    <circle r="25" fill="#ffffff" filter="url(#dropshadow)"/>
+    <circle r="22" stroke="#404040" fill="none" stroke-width="2px" vector-effect="non-scaling-stroke" />
+    <g transform="scale(0.13) translate(-150, -150) ">
+      <g transform="translate(0,300) scale(0.1,-0.1)"
+      fill="#404040" stroke="none">
+        <path d="M1355 2623 c-175 -63 -250 -165 -321 -440 -33 -128 -35 -146 -31
+        -253 5 -150 30 -226 159 -479 54 -106 98 -198 98 -203 0 -5 -60 -107 -133
+        -226 -73 -119 -157 -256 -186 -303 l-52 -86 91 -194 c50 -107 94 -197 99 -202
+        6 -6 253 357 379 560 19 29 37 53 40 53 4 0 40 -51 81 -113 144 -219 343 -507
+        350 -507 9 0 201 401 201 419 0 6 -80 133 -178 283 -98 150 -187 288 -198 306
+        l-19 33 87 168 c119 228 160 351 165 496 4 98 1 123 -25 225 -73 281 -125 366
+        -270 437 -71 36 -82 38 -181 41 -82 2 -117 -2 -156 -15z m278 -348 c53 -14
+        177 -70 177 -80 0 -2 -12 -37 -26 -77 -35 -98 -130 -282 -204 -397 -52 -79
+        -63 -92 -74 -80 -35 37 -316 532 -316 556 0 12 78 51 150 74 69 23 215 24 293
+        4z"/>
+      </g>
+    </g>
+  </g>
+</svg>

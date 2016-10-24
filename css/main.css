@@ -1,0 +1,51 @@
+/* prefix: brb; */
+
+.brb-ribbon {
+  position: fixed;
+  z-index: 999;
+  display: block;
+  width: 133px;
+  height: 133px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  background-position: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.brb-ribbon.brb-no-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .brb-ribbon.brb-no-mobile {
+    display: block;
+  }
+}
+
+.brb-ribbon.brb-pos-top-left {
+  background-image: url(../image/ribbon-top-left.svg);
+  top: 0px;
+  left: 0px;
+}
+
+.brb-ribbon.brb-pos-top-right {
+  background-image: url(../image/ribbon-top-right.svg);
+  top: 0px;
+  right: 0px;
+}
+
+.brb-ribbon.brb-pos-bottom-left {
+  background-image: url(../image/ribbon-bottom-left.svg);
+  bottom: 0px;
+  left: 0px;
+}
+
+.brb-ribbon.brb-pos-bottom-right {
+  background-image: url(../image/ribbon-bottom-right.svg);
+  bottom: 0px;
+  right: 0px;
+}

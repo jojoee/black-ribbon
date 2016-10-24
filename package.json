@@ -1,0 +1,23 @@
+{
+  "name": "black-ribbon",
+  "description": "Automatically add black ribbon into sites corner",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jojoee@github.com/jojoee/black-ribbon.git"
+  },
+  "author": "Nathachai Thongniran <inid3a@gmail.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/jojoee/black-ribbon/issues"
+  },
+  "homepage": "https://github.com/jojoee/black-ribbon#readme",
+  "dependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-connect-php": "0.0.8"
+  }
+}
