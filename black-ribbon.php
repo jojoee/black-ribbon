@@ -3,7 +3,7 @@
 Plugin Name: Black Ribbon
 Plugin URI: https://wordpress.org/plugins/black-ribbon/
 Description: Automatically add black ribbon into sites corner
-Version: 1.0.0
+Version: 1.1.0
 Author: Nathachai Thongniran
 Author URI: http://jojoee.com/
 Text Domain: brb
@@ -65,10 +65,12 @@ class Black_Ribbon {
     if ( $is_die ) die();
   }
 
+  // debug purpose
   private function da( $var = null ) {
     $this->dd( $var, false );
   }
 
+  // debug purpose
   private function dhead( $head, $var, $is_die = false ) {
     echo '<div class="debug-box">';
     echo '================';
@@ -79,10 +81,12 @@ class Black_Ribbon {
     echo '</div>';
   }
 
+  // debug purpose
   private function dump( $is_die = false ) {
     $this->da( $this->options, $is_die );
   }
 
+  // debug purpose
   private function reset() {
     update_option( $this->option_field_name, array() );
   }

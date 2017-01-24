@@ -17,6 +17,7 @@ Features:
 
 * Enable or disable on mobile
 * 4 Ribbon positions
+* User can add URL into ribbon
 
 Compatible with all browsers:
 
@@ -49,6 +50,9 @@ activate the plugin on your plugin dashboard (`/wp-admin/plugins.php`)
 Not available
 
 == Changelog ==
+
+= 1.1.0 (24 Jan 2017) =
+* User can add URL into ribbon
 
 = 1.0.0 (24 Oct 2016) =
 * First release
