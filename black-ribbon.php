@@ -364,7 +364,7 @@ class Black_Ribbon {
 
     add_settings_field(
       'brb_field_ribbon_url',
-      'Ribbon URL',
+      'Ribbon URL (with http / https)',
       array( $this, 'brb_field_ribbon_url_callback' ),
       $this->menu_page,
       $section_id
