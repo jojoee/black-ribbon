@@ -104,14 +104,27 @@ class Black_Ribbon {
     $is_enabled = $options['brb_field_is_enabled'];
     $is_enabled_on_mobile = $options['brb_field_is_enabled_on_mobile'];
     $position = $options['brb_field_ribbon_position'];
+    $ribbon_url = $options['brb_field_ribbon_url'];
+    $is_open_new_tab = $options['brb_field_is_open_new_tab'];
+
+    $has_url = $this->is_null_or_empty_string( $ribbon_url ) ? false : true;
+    $custom_attr = ( $is_open_new_tab ) ? 'target="_blank"' : '';
     $custom_css = 'brb-pos-' . $position . ' ';
     if ( ! $is_enabled_on_mobile ) { $custom_css .= 'brb-no-mobile'; }
 
-    if ( $is_enabled ) { ?>
-      <div class="brb-ribbon <?php echo $custom_css; ?>">
-        &nbsp;
-      </div>
-      <?php
+    if ( $is_enabled ) {
+      if ( $has_url ) {
+        printf( '<a class="brb-ribbon %s" href="%s" %s>&nbsp;</div>',
+          $custom_css,
+          $ribbon_url,
+          $custom_attr
+        );
+
+      } else {
+        printf( '<div class="brb-ribbon %s">&nbsp;</div>',
+          $custom_css
+        );
+      }
     }
   }
 
@@ -193,6 +206,33 @@ class Black_Ribbon {
     echo '</select>';
   }
 
+  public function brb_field_ribbon_url_callback() {
+    $field_id = 'brb_field_ribbon_url';
+    $field_name = $this->option_field_name . "[$field_id]";
+    $field_value = $this->options[ $field_id ];
+
+    printf(
+      '<input type="text" id="%s" placeholder="Enter ribbon url" name="%s" value="%s" />',
+      $field_id,
+      $field_name,
+      $field_value
+    );
+  }
+
+  public function brb_field_is_open_new_tab_callback() {
+    $field_id = 'brb_field_is_open_new_tab';
+    $field_name = $this->option_field_name . "[$field_id]";
+    $field_value = 1;
+    $check_attr = checked( 1, $this->options[ $field_id ], false );
+
+    printf(
+      '<input type="checkbox" id="%s" name="%s" value="%s" %s />',
+      $field_id,
+      $field_name,
+      $field_value,
+      $check_attr
+    );
+  }
 
   /*================================================================ Option
    */
@@ -204,6 +244,8 @@ class Black_Ribbon {
     //   'brb_field_is_enabled'             => 1
     //   'brb_field_is_enabled_on_mobile'   => 1
     //   'brb_field_ribbon_position'        => 'top-right'
+    //   'brb_field_ribbon_url'             => ''
+    //   'brb_field_is_open_new_tab'        => 1
     // ]
 
     $options = $this->options;
@@ -214,6 +256,9 @@ class Black_Ribbon {
     if ( ! isset( $options['brb_field_ribbon_position'] ) || ( $options['brb_field_ribbon_position'] === '' ) ) {
       $options['brb_field_ribbon_position'] = 'top-right';
     }
+
+    if ( ! isset( $options['brb_field_ribbon_url'] ) ) $options['brb_field_ribbon_url'] = '';
+    if ( ! isset( $options['brb_field_is_open_new_tab'] ) ) $options['brb_field_is_open_new_tab'] = 1;
 
     $this->options = $options;
   }
@@ -287,6 +332,8 @@ class Black_Ribbon {
     // - is_enabled
     // - is_enabled_on_mobile
     // - ribbon_position
+    // - ribbon_url
+    // - is_open_new_tab
     add_settings_field(
       'brb_field_is_enabled',
       'Enable',
@@ -310,6 +357,22 @@ class Black_Ribbon {
       $this->menu_page,
       $section_id
     );
+
+    add_settings_field(
+      'brb_field_ribbon_url',
+      'Ribbon URL',
+      array( $this, 'brb_field_ribbon_url_callback' ),
+      $this->menu_page,
+      $section_id
+    );
+
+    add_settings_field(
+      'brb_field_is_open_new_tab',
+      'Ribbon URL (Open new tab)',
+      array( $this, 'brb_field_is_open_new_tab_callback' ),
+      $this->menu_page,
+      $section_id
+    );
   }
 
   public function print_section_info() {
@@ -326,7 +389,8 @@ class Black_Ribbon {
 
     // text
     $text_input_ids = array(
-      'brb_field_ribbon_position'
+      'brb_field_ribbon_position',
+      'brb_field_ribbon_url'
     );
     foreach ( $text_input_ids as $text_input_id ) {
       $result[ $text_input_id ] = isset( $input[ $text_input_id ] )
@@ -337,7 +401,8 @@ class Black_Ribbon {
     // number
     $number_input_ids = array(
       'brb_field_is_enabled',
-      'brb_field_is_enabled_on_mobile'
+      'brb_field_is_enabled_on_mobile',
+      'brb_field_is_open_new_tab'
     );
     foreach ( $number_input_ids as $number_input_id ) {
       $result[ $number_input_id ] = isset( $input[ $number_input_id ] )
