@@ -118,14 +118,14 @@ class Black_Ribbon {
 
     if ( $is_enabled ) {
       if ( $has_url ) {
-        printf( '<a class="brb-ribbon %s" href="%s" %s>&nbsp;</div>',
+        printf( '<a class="brb-ribbon %s" href="%s" %s></a>',
           $custom_css,
           $ribbon_url,
           $custom_attr
         );
 
       } else {
-        printf( '<div class="brb-ribbon %s">&nbsp;</div>',
+        printf( '<div class="brb-ribbon %s"></div>',
           $custom_css
         );
       }
