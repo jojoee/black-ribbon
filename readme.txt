@@ -4,8 +4,7 @@ Contributors: jojoee
 Donate link: 
 Tags: grayscale, black, white, black and white, site, watermark, ribbon, black ribbon, CSS, CSS3
 Requires at least: 3.0.1
-Tested up to: 4.6.1
-Stable tag: 4.3
+Tested up to: 5.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +49,13 @@ activate the plugin on your plugin dashboard (`/wp-admin/plugins.php`)
 Not available
 
 == Changelog ==
+
+= 1.1.2 (24 Dec 2019) =
+* Recheck with WordPress 5.3.2
+* Fix cosmetic issues
+
+= 1.1.1 (24 Jan 2017) =
+* Update text
 
 = 1.1.0 (24 Jan 2017) =
 * User can add URL into ribbon

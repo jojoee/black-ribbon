@@ -3,7 +3,7 @@
 Plugin Name: Black Ribbon
 Plugin URI: https://wordpress.org/plugins/black-ribbon/
 Description: Automatically add black ribbon into sites corner
-Version: 1.1.1
+Version: 1.1.2
 Author: Nathachai Thongniran
 Author URI: http://jojoee.com/
 Text Domain: brb
