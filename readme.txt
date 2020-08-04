@@ -28,7 +28,7 @@ Compatible with all browsers:
 
 == Installation ==
 
-1. Install the plugin via admin plguins screen or download and upload this plugin into `wp-content/plugins` directory
+1. Install the plugin via admin plugins screen or download and upload this plugin into `wp-content/plugins` directory
 2. Activate the plugin through the **Plugins** menu in WordPress
 3. Select ribbon's position via `Settings > Black Ribbon` (optional)
 4. Done
